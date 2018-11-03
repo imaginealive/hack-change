@@ -17,6 +17,7 @@ namespace HackChangeTest
         [InlineData(30, 300, 270, 0, 0, 2, 1, 1, 0, 0)]
         [InlineData(94, 100, 6, 0, 0, 0, 0, 0, 1, 1)]
         [InlineData(23, 100, 77, 0, 0, 0, 1, 1, 1, 2)]
+        [InlineData(1, 2, 1, 0, 0, 0, 0, 0, 0, 1)]
 
         public void ChangeAble(int Amout, int Payment, int Change, int Bill1000, int Bill500, int Bill100, int Bill50, int Bill20, int Bill5, int Bill1)
         {
