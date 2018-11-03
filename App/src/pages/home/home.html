@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      อะไรวะเนี้ยยยยยยยยยยยยยยยยยยยยยยยยยยยย
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center>
+    ถอนเงินโว้ยยยยยยยยยยยยยยยยยยยยยยยยยยยย
+  </h3>
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>ราคาสินค้า</ion-label>
+      <ion-input type="text" [(ngModel)]="amount" name="amount"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>จำนวนเงินที่จ่าย</ion-label>
+      <ion-input type="text" [(ngModel)]="payment" name="payment"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button block (click)="OK()">กดปุ่มสิ!</button>
+
+  <ion-list *ngIf="IsCheck()">
+
+    <ion-label >เงินถอน : {{data.Change}}</ion-label>
+    <ion-label *ngIf="data.Bill1000 > 0">แบงค์ 1000 : {{data.Bill1000}}</ion-label>
+    <ion-label *ngIf="data.Bill500 > 0">แบงค์ 500 : {{data.Bill500}}</ion-label>
+    <ion-label *ngIf="data.Bill100 > 0">แบงค์ 100 : {{data.Bill100}}</ion-label>
+    <ion-label *ngIf="data.Bill50 > 0">แบงค์ 50 : {{data.Bill50}}</ion-label>
+    <ion-label *ngIf="data.Bill20 > 0">แบงค์ 20 : {{data.Bill20}}</ion-label>
+    <ion-label *ngIf="data.Bill5 > 0">แบงค์ 5 : {{data.Bill5}}</ion-label>
+    <ion-label *ngIf="data.Bill1 > 0">แบงค์ 1 : {{data.Bill1}}</ion-label>
+  </ion-list>
+  <ion-list *ngIf="!IsCheck()">
+    <ion-label>เงินถอน : {{data.Note}}</ion-label>
+  </ion-list>
+</ion-content>
