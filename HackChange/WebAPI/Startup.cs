@@ -37,10 +37,10 @@ namespace WebAPI
             }
             else
             {
-                app.UseHsts();
+                //app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
+            app.UseCors(b => b.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
